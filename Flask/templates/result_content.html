@@ -5,13 +5,13 @@
         <h4>Tested OS:</h4>
         <br>
         <div class="list-group">
-            <a href="result-freebsd.html" class="list-group-item active">FreeBSD 12-CURRENT with ASLR Patch</a>
-            <a href="result-openbsd.html" class="list-group-item">OpenBSD 6.1</a>
-            <a href="result-netbsd.html" class="list-group-item">NetBSD 7.1</a>
-            <a href="result-dragonflybsd.html" class="list-group-item">DragonFly BSD 4.8.1</a>
-            <a href="result-macos.html" class="list-group-item">macOS 10.12</a>
-            <a href="result-ubuntu.html" class="list-group-item">Ubuntu 17.04</a>
-            <a href="result-arch.html" class="list-group-item">Arch Linux 201708</a>
+            {% for os in tested_os %}
+                {% if os[0] == os_name %}
+                    <a href="{{ url_for('results', os_name=os[0])}}" class="list-group-item active">{{ os[1] }}</a>
+                {% else %}
+                    <a href="{{ url_for('results', os_name=os[0])}}" class="list-group-item">{{ os[1] }}</a>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 
@@ -27,7 +27,11 @@
             <!--Product-->
             <div class="product-wrapper">
                 <!--Product data-->
-                <h2 class="h2-responsive mt-4">FreeBSD 12-CURRENT with ASLR Patch</h2>
+                {% for os in tested_os %}
+                    {% if os[0] == os_name %}
+                        <h2 class="h2-responsive mt-4">{{ os[1] }}</h2>
+                    {% endif %}
+                {% endfor %}
                 <hr>
                 <!--/.Product data-->
 
