@@ -56,10 +56,10 @@ def new():
     return '''
     <!doctype html>
     <form method=post enctype=multipart/form-data>
-      git clone https://github.com/yzgyyang/getaddrs
-      cd getaddrs
-      [make, bmake]
-      ./getaddrs 100000 > output.txt
+      git clone https://github.com/yzgyyang/getaddrs </br>
+      cd getaddrs </br>
+      [make, bmake] </br>
+      ./getaddrs 100000 > output.txt </br>
       <p><input type=file name=file>
          <input type=submit value=Upload>
     </form>
@@ -124,4 +124,4 @@ def allowed_file(filename):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
