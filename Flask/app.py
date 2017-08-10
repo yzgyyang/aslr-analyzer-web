@@ -56,6 +56,10 @@ def new():
     return '''
     <!doctype html>
     <form method=post enctype=multipart/form-data>
+      git clone https://github.com/yzgyyang/getaddrs
+      cd getaddrs
+      [make, bmake]
+      ./getaddrs 100000 > output.txt
       <p><input type=file name=file>
          <input type=submit value=Upload>
     </form>
