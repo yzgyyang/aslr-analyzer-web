@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Analysis{% endblock %}
+{% block content %}
+
+    <main>
+
+        <!--Main layout-->
+        <div class="container">
+            <div class="row">
+
+              <!--Main column-->
+              <div class="col-lg-12">
+
+                  <!--First row-->
+                  <div class="row wow fadeIn" data-wow-delay="0.4s">
+                      <div class="col-md-12">
+                          <!--Product-->
+                          <div class="product-wrapper">
+                              <!--Product data-->
+                              <h2 class="h2-responsive mt-4">Analysis</h2>
+                              <hr>
+                              <!--/.Product data-->
+
+                              <!--Featured image-->
+                              {{ the_div|safe }}
+                              {{ the_script|safe }}
+                              <!--/.Featured image-->
+
+                              <br>
+                          </div>
+                          <!--Product-->
+
+                      </div>
+                  </div>
+                  <!--/.First row-->
+
+              </div>
+              <!--/.Main column-->
+
+            </div>
+        </div>
+        <!--/.Main layout-->
+
+    </main>
+
+{% endblock %}

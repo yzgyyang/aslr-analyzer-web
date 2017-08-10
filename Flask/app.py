@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 import numpy as np
 from bokeh.plotting import figure, show
 from bokeh.layouts import gridplot
+from bokeh.embed import components
 from operator import itemgetter
 
 import ast
@@ -99,8 +100,10 @@ def uploaded(filename):
         p.xaxis.axis_label = 'bins'
         p.yaxis.axis_label = 'Probability'
         # Output
-        script, div = components(plot)
-    return filename
+        script, div = components(p)
+    return render_template("result_new.html",
+        the_div=div,
+        the_script=script)
 
 @app.route('/results')
 @app.route('/results/<os_name>')
