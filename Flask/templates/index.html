@@ -31,10 +31,10 @@
                         <!--Card content-->
                         <div class="card-body">
                             <!--Title-->
-                            <h4 class="card-title">(WIP) Start an Analysis</h4>
+                            <h4 class="card-title">Start an Analysis</h4>
                             <!--Text-->
                             <p class="card-text">Upload testing results to see the analysis.</p>
-                            <a href="#" class="btn btn-primary">Start</a>
+                            <a href="{{ url_for('new') }}" class="btn btn-primary">Start</a>
                         </div>
 
                     </div>
@@ -58,7 +58,7 @@
                             <h4 class="card-title">Show Archived Results</h4>
                             <!--Text-->
                             <p class="card-text">Analyses were done on multiple systems.</p>
-                            <a href="result-freebsd.html" class="btn btn-primary">Show</a>
+                            <a href="{{ url_for('results') }}" class="btn btn-primary">Show</a>
                         </div>
 
                     </div>
