@@ -7,64 +7,7 @@
         <!--Main layout-->
         <div class="container">
             <div class="row">
-
-                <!--Sidebar-->
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
-
-                    <div class="widget-wrapper">
-                        <h4>Tested OS:</h4>
-                        <br>
-                        <div class="list-group">
-                            <a href="result-freebsd.html" class="list-group-item active">FreeBSD 12-CURRENT with ASLR Patch</a>
-                            <a href="result-openbsd.html" class="list-group-item">OpenBSD 6.1</a>
-                            <a href="result-netbsd.html" class="list-group-item">NetBSD 7.1</a>
-                            <a href="result-dragonflybsd.html" class="list-group-item">DragonFly BSD 4.8.1</a>
-                            <a href="result-macos.html" class="list-group-item">macOS 10.12</a>
-                            <a href="result-ubuntu.html" class="list-group-item">Ubuntu 17.04</a>
-                            <a href="result-arch.html" class="list-group-item">Arch Linux 201708</a>
-                        </div>
-                    </div>
-
-                </div>
-                <!--/.Sidebar-->
-
-                <!--Main column-->
-                <div class="col-lg-8">
-
-                    <!--First row-->
-                    <div class="row wow fadeIn" data-wow-delay="0.4s">
-                        <div class="col-md-12">
-                            <!--Product-->
-                            <div class="product-wrapper">
-                                <!--Product data-->
-                                <h2 class="h2-responsive mt-4">FreeBSD 12-CURRENT with ASLR Patch</h2>
-                                <hr>
-                                <!--/.Product data-->
-
-                                <!--Featured image-->
-                                <div class="view overlay hm-white-light z-depth-1-half">
-                                    <!--class="img-fluid"-->
-                                    <div class="img-fluid bk-root">
-                                        <div class="bk-plotdiv" id="1a7cef43-a3ac-4731-9f7a-26b44aeb2bac"></div>
-                                    </div>
-
-                                    <div class="mask">
-                                    </div>
-                                    <h3 class="price"><span class="badge red darken-2">10 $</span></h3>
-                                </div>
-                                <!--/.Featured image-->
-
-                                <br>
-                            </div>
-                            <!--Product-->
-
-                        </div>
-                    </div>
-                    <!--/.First row-->
-
-                </div>
-                <!--/.Main column-->
-
+                {% include "result_content.html" %}
             </div>
         </div>
         <!--/.Main layout-->
