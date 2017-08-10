@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{% block title %}{% endblock %} | Guangyuan (Charlie) Yang</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="{{ url_for('static', filename='css/mdb.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        main {
+            margin-top: 3rem;
+            ;
+        }
+        main .card {
+            margin-bottom: 2rem;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .read-more {
+                text-align: center;
+            }
+        }
+
+        footer.page-footer a {
+            color: #323232;
+        }
+
+        footer.page-footer {
+            background-color: #dfe9f0;
+            margin-top: 2rem;
+            color: black;
+        }
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+
+        .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+        }
+
+    </style>
+</head>
+
+<body>
+    {% include "header.html" %}
+
+    {% block content %}
+    {% endblock %}
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+        <!--Footer links-->
+        <div class="container-fluid">
+            <div class="row">
+                <!--First column-->
+                <div class="col-lg-3 col-md-6 ml-auto">
+                    <h5 class="title mb-3"><strong>About ASLR Analysis</strong></h5>
+                    <p>It's magic!!</p>
+
+                </div>
+                <!--/.First column-->
+                <div class="col-lg-2 col-md-6 ml-auto">
+                  <h5 class="title mb-3"><strong>About Charlie</strong></h5>
+                  <ul>
+                      <li>
+                          <a href="http://charlieyang.me/">Personal Website</a>
+                      </li>
+                      <li>
+                          <a href="http://blog.charlieyang.me/">Blog</a>
+                      </li>
+                  </ul>
+                </div>
+                <!--Second column-->
+                <div class="col-lg-2 col-md-6 ml-auto">
+                </div>
+                <!--/.Second column-->
+                <hr class="w-100 clearfix d-sm-none">
+                <!--Third column-->
+                <div class="col-lg-2 col-md-6 ml-auto">
+                </div>
+                <!--/.Third column-->
+                <hr class="w-100 clearfix d-sm-none">
+                <!--Fourth column-->
+                <div class="col-lg-2 col-md-6 ml-auto">
+                </div>
+                <!--/.Fourth column-->
+            </div>
+        </div>
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="containter-fluid">
+                © 2017 Guangyuan Yang
+            </div>
+        </div>
+        <!--/.Copyright-->
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+
+    <!-- Bootstrap dropdown -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+    </body>
+
+</html>
