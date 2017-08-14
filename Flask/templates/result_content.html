@@ -69,16 +69,31 @@
 
                     <!--Panel 2-->
                     <div class="tab-pane fade" id="panel12" role="tabpanel">
+                        {% for graph_name in ['raw', 'his', 'cdf'] %}
+                            <a href="{{ url_for('results_interactive', os_name=os_name, test_name='malloc4m', graph_name=graph_name) }}">
+                                <img src="{{ url_for('static', filename='results/' + os_name + '_malloc4m' + '_' + graph_name + '.png') }}">
+                            </a>
+                        {% endfor %}
                     </div>
                     <!--/.Panel 2-->
 
                     <!--Panel 3-->
                     <div class="tab-pane fade" id="panel13" role="tabpanel">
+                        {% for graph_name in ['raw', 'his', 'cdf'] %}
+                            <a href="{{ url_for('results_interactive', os_name=os_name, test_name='mmap4k', graph_name=graph_name) }}">
+                                <img src="{{ url_for('static', filename='results/' + os_name + '_mmap4k' + '_' + graph_name + '.png') }}">
+                            </a>
+                        {% endfor %}
                     </div>
                     <!--/.Panel 3-->
 
                     <!--Panel 4-->
                     <div class="tab-pane fade" id="panel14" role="tabpanel">
+                        {% for graph_name in ['raw', 'his', 'cdf'] %}
+                            <a href="{{ url_for('results_interactive', os_name=os_name, test_name='so1', graph_name=graph_name) }}">
+                                <img src="{{ url_for('static', filename='results/' + os_name + '_so1' + '_' + graph_name + '.png') }}">
+                            </a>
+                        {% endfor %}
                     </div>
                     <!--/.Panel 4-->
 
