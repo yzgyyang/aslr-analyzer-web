@@ -33,7 +33,6 @@ TESTED_OS = [
     ('netbsd', 'NetBSD 7.1'),
     ('dragonfly', 'DragonFly BSD 4.8.1'),
     ('macos', 'macOS 10.12'),
-    ('ubuntu', 'Ubuntu 17.04'),
     ('arch', 'Arch Linux 201708')
 ]
 
