@@ -117,6 +117,13 @@ def results(os_name="freebsd"):
         tested_os=TESTED_OS,
         navs=NAVS)
 
+@app.route('/results/<os_name>/<test_name>/<graph_name>')
+def results_interactive(os_name, test_name, graph_name):
+    return render_template("result_interactive.html",
+        os_name=os_name,
+        test_name=test_name,
+        graph_name=graph_name,
+        navs=NAVS)
 
 # Helpers
 def allowed_file(filename):

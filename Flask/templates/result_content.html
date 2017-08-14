@@ -60,8 +60,9 @@
                     <!--Panel 1-->
                     <div class="tab-pane fade in show active" id="panel11" role="tabpanel">
                         {% for graph_name in ['raw', 'his', 'cdf'] %}
-                            <img src="{{ url_for('static', filename='results/' + os_name + '_malloc4k' + '_' + graph_name + '.png') }}">
-                            <!--{% include 'results/' + os_name + '_malloc4k' + '_' + graph_name + '.html' | safe %}-->
+                            <a href="{{ url_for('results_interactive', os_name=os_name, test_name='malloc4k', graph_name=graph_name) }}">
+                                <img src="{{ url_for('static', filename='results/' + os_name + '_malloc4k' + '_' + graph_name + '.png') }}">
+                            </a>
                         {% endfor %}
                     </div>
                     <!--/.Panel 1-->
