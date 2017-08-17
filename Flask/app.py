@@ -12,6 +12,7 @@ import ast
 
 # Initialize the Flask application
 app = Flask(__name__)
+app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='/aslr')
 
 # Configs
 UPLOAD_FOLDER = '/tmp'
@@ -35,6 +36,25 @@ TESTED_OS = [
     ('macos', 'macOS 10.12'),
     ('arch', 'Arch Linux 201708')
 ]
+
+# Reverse Proxy + Subfolder
+# Solution from: https://stackoverflow.com/questions/18967441/add-a-prefix-to-all-flask-routes/36033627#36033627
+class PrefixMiddleware(object):
+
+    def __init__(self, app, prefix=''):
+        self.app = app
+        self.prefix = prefix
+
+    def __call__(self, environ, start_response):
+
+        if environ['PATH_INFO'].startswith(self.prefix):
+            environ['PATH_INFO'] = environ['PATH_INFO'][len(self.prefix):]
+            environ['SCRIPT_NAME'] = self.prefix
+            return self.app(environ, start_response)
+        else:
+            start_response('404', [('Content-Type', 'text/plain')])
+            return ["This url does not belong to the app.".encode()]
+
 
 @app.route('/')
 def index():
