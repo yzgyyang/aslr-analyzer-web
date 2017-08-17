@@ -7,17 +7,22 @@ RUN apt -y upgrade
 # Install Python
 RUN apt install -y python3 python3-pip
 
-# Add requirements.txt
-ADD requirements.txt /flaskapp
+# Install pcre support
+RUN apt install -y libpcre3 libpcre3-dev
 
-# Install uwsgi Python web server
-RUN pip3 install uwsgi
+# Add requirements.txt
+COPY requirements.txt . 
+
+# Upgrade pip
+RUN pip3 install --upgrade pip
 
 # Install requirements
 RUN pip3 install -r requirements.txt
 
-# Create app directory
+# Install uwsgi Python web server
+RUN pip3 install uwsgi
 
+# Create app directory
 ADD ./Flask /flaskapp
 
 # Set home directory for the environment
